@@ -15,11 +15,12 @@
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
-      "rust-lang.rust-analyzer"
-      "tamasfe.even-better-toml"
-      "serayuzgur.crates"
       "vadimcn.vscode-lldb"
+      "serayuzgur.crates"
+      "tamasfe.even-better-toml"
+      "mhutchie.git-graph"
       "eamodio.gitlens"
+      "rust-lang.rust-analyzer"
     ];
     # Enable previews and customize configuration
     previews = {};
