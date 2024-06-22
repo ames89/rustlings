@@ -10,7 +10,6 @@
     pkgs.rustfmt
     pkgs.stdenv.cc
     pkgs.python3
-    pkgs.rustup
   ];
   # Sets environment variables in the workspace
   env = {
