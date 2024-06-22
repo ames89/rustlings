@@ -5,9 +5,6 @@
   channel = "stable-23.11"; # or "unstable"
   # Use https://search.nixos.org/packages to find packages
   packages = [
-    pkgs.cargo
-    pkgs.rustc
-    pkgs.rustfmt
     pkgs.stdenv.cc
     pkgs.python3
   ];
@@ -26,5 +23,8 @@
     ];
     # Enable previews and customize configuration
     previews = {};
+  };
+  idx.workspace.onCreate = {
+    rustip-install = "RUSTUP_INIT_SKIP_PATH_CHECK='yes';curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh";
   };
 }
