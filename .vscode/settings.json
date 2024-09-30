@@ -1,0 +1,16 @@
+{
+    "workbench.iconTheme": "theia-file-icons",
+    "redhat.telemetry.enabled": true,
+    "files.exclude": {
+        "**/.git": false
+    },
+    "workbench.colorTheme": "Visual Studio Dark",
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "files.autoSave": "off",
+    "editor.formatOnSave": true,
+    "workbench.editor.enablePreview": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "gitpod.openInStable.neverPrompt": true,
+    "gitlens.currentLine.enabled": false
+}
