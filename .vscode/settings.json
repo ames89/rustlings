@@ -1,0 +1,17 @@
+{
+    "files.exclude": {
+        "**/.git": false
+    },
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "files.autoSave": "off",
+    "editor.formatOnSave": true,
+    "workbench.editor.enablePreview": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "gitlens.currentLine.enabled": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.renderWhitespace": "all",
+    "IDX.aI.enableInlineCompletion": true,
+    "IDX.aI.enableCodebaseIndexing": true,
+    "editor.wordWrap": "on"
+}
