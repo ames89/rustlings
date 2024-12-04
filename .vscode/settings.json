@@ -13,5 +13,7 @@
     "editor.renderWhitespace": "all",
     "IDX.aI.enableInlineCompletion": true,
     "IDX.aI.enableCodebaseIndexing": true,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "debug.console.fontSize": 12,
+    "terminal.integrated.fontSize": 12
 }
