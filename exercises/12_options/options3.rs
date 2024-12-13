@@ -5,14 +5,11 @@ struct Point {
 }
 
 fn main() {
-    let mut optional_point = Some(Point { x: 100, y: 200 });
+    let optional_point = Some(Point { x: 100, y: 200 });
 
     // TODO: Fix the compiler error by adding something to this match statement.
     match optional_point {
-        Some(ref mut p) => {
-            println!("Co-ordinates are {},{}", p.x, p.y);
-            p.x = 1
-        }
+        Some(p) => println!("Co-ordinates are {},{}", p.x, p.y),
         _ => panic!("No match!"),
     }
 
