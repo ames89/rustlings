@@ -14,7 +14,9 @@
 				"mhutchie.git-graph",
 				"fill-labs.dependi",
 				"dustypomerleau.rust-syntax",
-				"rust-lang.rust-analyzer"
+				"rust-lang.rust-analyzer",
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
 			]
 		}
 	}
