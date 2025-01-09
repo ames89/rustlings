@@ -16,12 +16,15 @@
 
 use std::num::ParseIntError;
 
-fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
-    let processing_fee = 1;
-    let cost_per_item = 5;
+fn total_cost(item_quantity: &str) -> Result<i16, ParseIntError> {
+    let processing_fee: i16 = 1;
+    let cost_per_item: i16 = 5;
 
     // TODO: Handle the error case as described above.
-    let qty = item_quantity.parse::<i32>();
+    let qty: i16 = match item_quantity.parse::<i16>() {
+        Ok(v) => v,
+        Err(e) => return Err(e),
+    };
 
     Ok(qty * cost_per_item + processing_fee)
 }
@@ -38,6 +41,14 @@ mod tests {
     #[test]
     fn item_quantity_is_a_valid_number() {
         assert_eq!(total_cost("34"), Ok(171));
+    }
+
+    #[test]
+    fn item_quantity_is_overflown_number() {
+        assert_eq!(
+            total_cost("34000").unwrap_err().kind(),
+            &IntErrorKind::PosOverflow
+        );
     }
 
     #[test]
