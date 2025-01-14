@@ -1,15 +1,39 @@
-struct Node {
-    value: String,
-    next: Option<Box<Node>>,
-}
+use std::cell::RefCell;
+use std::rc::Rc;
 
-impl Node {
-    fn new(value: String) -> Node {
-        Node { value, next: None }
+mod node_space {
+    pub struct Node {
+        pub value: String,
+        pub prev: Option<Rc<RefCell<Node>>>,
+        pub next: Option<Rc<RefCell<Node>>>,
+    }
+
+    impl Node {
+        pub fn new(value: String) -> Node {
+            Node {
+                value,
+                prev: None,
+                next: None,
+            }
+        }
+
+        pub fn append(&mut self, mut new_node: Node) {
+            let mut tail = self;
+
+            while let Some(ref mut next) = tail.next {
+                tail = next;
+            }
+
+            let new_node = Rc::new(RefCell::new(new_node));
+            new_node.borrow_mut().prev = Some(Rc::clone(&Rc::new(RefCell::new(*tail))));
+            tail.next = Some(Rc::clone(&new_node));
+        }
     }
 }
 
 fn main() {
+    use node_space::Node;
+
     let mut head = Node::new("Hello".to_string());
     let mut tail = &mut head;
     for i in 0..10 {
